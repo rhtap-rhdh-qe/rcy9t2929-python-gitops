@@ -1,0 +1,18 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata: 
+  labels: 
+    app.kubernetes.io/instance: rcy9t2929-python
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/name: rcy9t2929-python 
+  name: rcy9t2929-python
+spec:
+  port:
+    targetPort: 8081 
+  tls:
+    insecureEdgeTerminationPolicy: Redirect
+    termination: edge
+  to:
+    kind: Service
+    name: rcy9t2929-python
+    weight: 100 
